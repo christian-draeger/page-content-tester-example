@@ -18,7 +18,7 @@
         <dependency>
             <groupId>io.github.christian-draeger</groupId>
             <artifactId>page-content-tester</artifactId>
-            <version>1.0.1</version>
+            <version>1.4.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

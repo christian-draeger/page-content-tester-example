@@ -1,4 +1,4 @@
-package testcases.bunchofcalls;
+package testcases.bunchOfCallsForDifferentUrls;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
@@ -6,14 +6,13 @@ import static org.hamcrest.core.StringContains.containsString;
 import org.junit.Test;
 
 import fetcher.FetchedPage;
-import runner.PageContent;
 
-public class Example8Test extends PageContent {
+public class Example8Test {
 
     Random random = new Random();
     
     @Test
-    public void test99() throws InterruptedException {
+    public void test() throws InterruptedException {
         FetchedPage page = FetchedPage.fetchPage(random.getRandomGoogleUrl());
         String originalSearchTerm = page.getDocument().select("a.spell_orig").text();
         assertThat(page.getUrl(), containsString(originalSearchTerm));

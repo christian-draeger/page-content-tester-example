@@ -1,4 +1,4 @@
-package testcases.bunchofcalls;
+package testcases.bunchOfCallsForDifferentUrls;
 
 import java.util.UUID;
 

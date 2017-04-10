@@ -1,4 +1,4 @@
-package testcases.bunchofcalls;
+package testcases.bunchOfCallsForDifferentUrls;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import fetcher.FetchedPage;
 
-public class Example2Test {
+public class Example4Test {
 
     Random random = new Random();
 

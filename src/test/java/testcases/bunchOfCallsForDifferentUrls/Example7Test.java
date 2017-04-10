@@ -1,4 +1,4 @@
-package testcases.bunchofcalls;
+package testcases.bunchOfCallsForDifferentUrls;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
@@ -7,10 +7,10 @@ import org.junit.Test;
 
 import fetcher.FetchedPage;
 
-public class Example6Test {
+public class Example7Test {
 
     Random random = new Random();
-
+    
     @Test
     public void test99() throws InterruptedException {
         FetchedPage page = FetchedPage.fetchPage(random.getRandomGoogleUrl());
