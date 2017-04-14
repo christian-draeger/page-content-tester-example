@@ -1,15 +1,22 @@
 package testcases;
 
+import static fetcher.FetchedPage.DeviceType.DESKTOP;
+import static fetcher.FetchedPage.DeviceType.MOBILE;
+import static fetcher.FetchedPage.call;
 import static fetcher.FetchedPage.fetchPage;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.collection.IsMapContaining.hasEntry;
+import static org.jsoup.Connection.Method.POST;
 
+import java.util.Collections;
+
+import org.json.JSONObject;
 import org.junit.Test;
 
-import annotations.FetchPage;
+import annotations.Fetch;
 import fetcher.FetchedPage;
 import runner.PageContentTester;
 
@@ -20,14 +27,14 @@ public class ExampleUsageTest extends PageContentTester {
     private static final String VALID_SELECTOR = "h1";
 
     @Test
-    @FetchPage(GITHUB_URL)
+    @Fetch(url=GITHUB_URL)
     public void fetcher_should_return_count_of_certain_element() {
         assertThat(page.get().getElementCount(VALID_SELECTOR), is(1));
     }
 
     @Test
-    @FetchPage(GITHUB_URL)
-    @FetchPage(GOOGLE_URL)
+    @Fetch(url=GITHUB_URL)
+    @Fetch(url=GOOGLE_URL)
     public void fetch_multiple_pages_via_annotation_and_get_pages_by_url_snippet() {
 
         FetchedPage github = page.get("github");
@@ -45,8 +52,8 @@ public class ExampleUsageTest extends PageContentTester {
     }
 
     @Test
-    @FetchPage(GITHUB_URL)
-    @FetchPage(GOOGLE_URL)
+    @Fetch(url=GITHUB_URL)
+    @Fetch(url=GOOGLE_URL)
     public void fetch_multiple_pages_via_annotation_and_get_pages_by_index() {
         FetchedPage github = page.get(0);
         FetchedPage google = page.get(1);
@@ -69,4 +76,16 @@ public class ExampleUsageTest extends PageContentTester {
         assertThat(google.getUrl(), equalTo(GOOGLE_URL));
     }
 
+    @Test
+    @Fetch(url = "http://whatsmyuseragent.org/", device = MOBILE)
+    public void fetch_page_and_emulate_mobile_device_by_annotation() {
+        String ua = page.get().getElement("p.intro-text").text();
+        assertThat(ua, containsString(page.get().getConfig().getUserAgent(MOBILE)));
+    }
+
+    @Test
+    public void do_post_request_and_check_response() throws Exception {
+        JSONObject responseBody = call("http://httpbin.org/post", DESKTOP, POST, Collections.emptyMap()).getJsonResponse();
+        assertThat(responseBody.get("url"), equalTo("http://httpbin.org/post"));
+    }
 }
