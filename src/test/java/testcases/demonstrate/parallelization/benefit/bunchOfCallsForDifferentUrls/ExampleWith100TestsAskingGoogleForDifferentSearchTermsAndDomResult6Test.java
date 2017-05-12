@@ -1,16 +1,16 @@
-package testcases.bunchOfCallsForDifferentUrls;
+package testcases.demonstrate.parallelization.benefit.bunchOfCallsForDifferentUrls;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 
 import org.junit.Test;
 
-import fetcher.FetchedPage;
+import pagecontenttester.fetcher.FetchedPage;
 
-public class ExampleWith100TestsAskingGoogleForDifferentSearchTermsAndDomResult2Test {
+public class ExampleWith100TestsAskingGoogleForDifferentSearchTermsAndDomResult6Test {
 
-    Random random = new Random();
-    
+    static Random random = new Random();
+
     @Test
     public void test() {
         FetchedPage page = FetchedPage.fetchPage(random.getRandomGoogleUrl());

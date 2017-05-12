@@ -1,23 +1,23 @@
-package testcases;
+package testcases.example.usage;
 
-import static fetcher.FetchedPage.DeviceType.MOBILE;
-import static fetcher.FetchedPage.call;
-import static fetcher.FetchedPage.fetchPage;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.collection.IsMapContaining.hasEntry;
 import static org.jsoup.Connection.Method.POST;
+import static pagecontenttester.fetcher.FetchedPage.DeviceType.MOBILE;
+import static pagecontenttester.fetcher.FetchedPage.call;
+import static pagecontenttester.fetcher.FetchedPage.fetchPage;
 
 import java.util.Collections;
 
 import org.json.JSONObject;
 import org.junit.Test;
 
-import annotations.Fetch;
-import fetcher.FetchedPage;
-import runner.PageContentTester;
+import pagecontenttester.annotations.Fetch;
+import pagecontenttester.fetcher.FetchedPage;
+import pagecontenttester.runner.PageContentTester;
 
 public class ExampleUsageTest extends PageContentTester {
 

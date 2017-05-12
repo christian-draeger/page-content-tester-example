@@ -8,6 +8,10 @@
     <artifactId>page-content-tester-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <surefire.rerunFailingTestsCount>2</surefire.rerunFailingTestsCount>
+    </properties>
+
     <parent>
         <groupId>io.github.christian-draeger</groupId>
         <artifactId>page-content-tester-parent</artifactId>
@@ -18,7 +22,7 @@
         <dependency>
             <groupId>io.github.christian-draeger</groupId>
             <artifactId>page-content-tester</artifactId>
-            <version>1.5.2</version>
+            <version>1.5.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -5,7 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Test;
 
-import fetcher.FetchedPage;
+import pagecontenttester.fetcher.FetchedPage;
 
 public class CachingTest {
 

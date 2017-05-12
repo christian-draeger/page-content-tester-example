@@ -1,4 +1,4 @@
-package testcases.bunchOfCallsForDifferentUrls;
+package testcases.demonstrate.parallelization.benefit.bunchOfCallsForDifferentUrls;
 
 import java.util.UUID;
 
