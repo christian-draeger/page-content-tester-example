@@ -1,14 +1,15 @@
 package testcases;
 
-import org.junit.Test;
-import paco.annotations.Fetch;
-import paco.runner.PageContentTester;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Fetch(url = "localhost/example", port = "8089")
-@Fetch(url = "localhost/example2", port = "8089")
-public class FetchMultipleFromClassTest extends PageContentTester {
+import org.junit.Test;
+
+import paco.annotations.Fetch;
+import paco.runner.Paco;
+
+@Fetch(url = "localhost/example")
+@Fetch(url = "localhost/example2")
+public class FetchMultipleFromClassTest extends Paco {
 
     @Test
     public void can_fetch_from_class_annotation() {

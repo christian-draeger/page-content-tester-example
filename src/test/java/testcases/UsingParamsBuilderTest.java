@@ -1,14 +1,15 @@
 package testcases;
 
-import org.json.JSONObject;
-import org.junit.Test;
-import paco.fetcher.Page;
-import paco.runner.Paco;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.jsoup.Connection.Method.POST;
 import static paco.configurations.FetcherMethodOptions.params;
 import static paco.fetcher.FetchedPage.fetcher;
+
+import org.json.JSONObject;
+import org.junit.Test;
+
+import paco.fetcher.Page;
+import paco.runner.Paco;
 
 public class UsingParamsBuilderTest extends Paco {
 
